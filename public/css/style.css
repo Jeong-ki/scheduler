@@ -12,7 +12,6 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  min-height: 100vh;
 }
 html {
   width: 100%;
@@ -36,13 +35,15 @@ a { text-decoration: none; display: inline; color: black}
   margin: auto;
   display: flex;
   flex-direction: row;
-  height: 90%;
+  /* left: 50%; */
+  top: 50%;
 }
 
 /* main */
 .main{
   background-color: white;
   width: 480px;
+  height: 630px;
   overflow-y: scroll;
   border-radius: 60px 0 0 60px;
   border: 5px solid rgb(73, 149, 179);
@@ -235,6 +236,7 @@ a { text-decoration: none; display: inline; color: black}
   flex-direction: column;
   border-radius: 0 60px 60px 0;
   width: 240px;
+  height: 640px;
   font-size: 20px;
 }
 
@@ -523,7 +525,7 @@ a { text-decoration: none; display: inline; color: black}
   padding: 20px;
   border-radius: 50%;
   margin: 5px;
-  margin-top: 70px;
+  margin-top: 30px;
 }
 
 #blue{
