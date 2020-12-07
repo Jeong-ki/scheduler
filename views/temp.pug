@@ -1,0 +1,137 @@
+html
+  head
+    meta(charset='utf-8')
+    title Scheduler
+    link(rel="stylesheet" href="/css/style.css")
+    
+    link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+          integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc"
+          crossorigin="anonymous")
+    link(rel="preconnect" href="https://fonts.gstatic.com")
+    link(rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap")
+
+  body
+    div(class="center")
+      section(id="main" class="main")
+        div(id="main_in")
+          div(id="head")
+            h1
+              a(href="/") Today's Schedule
+            h2(id="date")= date
+          h3(id="create" class="create")
+            a(href="/topic/create")
+              p +
+              //- i(class="fas fa-plus-square")
+        
+          -for(var i=0; i<topics.length; i++)
+            div(class="list")
+              p(class="title" href="/")
+                a(href="/topic/"+topics[i].title)= topics[i].title
+              p(class="content")= topics[i].description
+          -if(create)
+            div(class="info")
+              form(action="/topic/create_process" method="post")
+                p
+                  input(id="infoText" type="text" name="title" placeholder="title")
+                p
+                  textarea(id="infoDes" name="description" placeholder="description")
+                p
+                  input(id="infoBtn" class="cbtn" type="submit" value="create")
+          -if(update)
+            div(class="info")
+              form(action="/topic/update_process" method="post")
+                input(type="hidden" name="id" value= id)
+                p
+                  input(id="infoText" type="text" name="title" placeholder="title" value= title)
+                p
+                  textarea(id="infoDes" name="description" placeholder="description")= description
+                p
+                  input(id="infoBtn" class="cbtn" type="submit" value="update")
+          -if(page)
+            div(class="page")
+              h2= sanitizedTitle
+              p= sanitizedDescription
+              div(class="up_del")
+                a(id="upBtn" href="/topic/update/"+sanitizedTitle) update
+                form(action="/topic/delete_process" method="post")
+                  input(type="hidden" name="id" value= id)
+                  input(class="del" type="submit" value="delete")
+          -if(authIsOwner === false)
+            div(class="hello")
+              img(src="/images/main2.png")
+
+      section(id="right_bar" class="right_bar")
+        -if(authIsOwner === false)
+          div(class="before")
+            a(id="login" class="login" href="/auth/login") &nbspLogin
+            a(class="register" href="/auth/register") &nbspRegister
+        -if(authIsOwner === true)
+          div(class="success")
+            div(class="face")
+              img(src="/images/icon1.png")
+            div(class="after")
+              p= nickname
+              a(href="/auth/logout") logout
+
+        -if(login)
+          div(class="overlay")
+          div(id="log" class="log") &nbsp 로그인
+            div(class="cancel")
+              a(href="/") x
+            form(action="/auth/login_process" method="post")
+              p
+                input(type="text" name="email" placeholder="ID")
+              p
+                input(type="password" name="pwd" placeholder="password")
+              p
+                div(class="feedback")= feedback
+                input(class="log_btn" type="submit" value="login")
+                a(href="/auth/register") | register
+              
+          style(type="text/css").
+
+        -if(register)
+          div(class="overlay")
+            div(id="reg" class="reg") &nbsp 회원가입
+              div(class="cancel")
+                a(href="/") x
+              form(action="/auth/register_process" method="post")
+                p
+                  input(type="text" name="email" placeholder="ID")
+                p
+                  input(type="password" name="pwd" placeholder="password")
+                p
+                  input(type="password" name="pwd2" placeholder="password(confirm)")
+                p
+                  input(type="text" name="displayName" placeholder="Nickname")
+                p
+                  div(class="feedback")= feedback
+                  input(class="reg_btn" type="submit" value="register")
+        
+        div(id="stdiv" class="stdiv")
+          p(class="stw") &nbspStopwatch
+          div(id="stopwatch")
+            div(id="timer" class="timer")
+          
+          div(id="swBtn")
+            i(id="startBtn" class="fas fa-play") &nbsp&nbsp
+            i(id="stopBtn" class="fas fa-pause") &nbsp&nbsp
+            i(id="resetBtn" class="fas fa-stop")
+
+        div(class="clock")
+          div(class="hour")
+            div(class="hr" id="hr")
+          div(class="min")
+            div(class="mn" id="mn")
+          div(class="sec")
+            div(class="sc" id="sc")
+        
+        div(class="toggle")
+          div(id="blue")
+          div(id="yellow")
+          div(id="green")
+          div(id="red")
+
+    script(src="/js/stopWatch.js")     
+    script(src="/js/clock.js")  
+    script(src="/js/toggle.js")

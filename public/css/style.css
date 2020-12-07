@@ -1,0 +1,542 @@
+body {
+  background-color: #e8e8e8;
+  display: flex;
+  flex-direction: row;
+  flex-basis: auto;
+  font-family: 'Nanum Pen Script', cursive;
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  background: url(/images/background6.png) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  min-height: 100vh;
+}
+html {
+  width: 100%;
+  height: 100%;
+}
+
+a:visited { text-decoration: none; }
+a:link { text-decoration: none; }
+a { text-decoration: none; display: inline; color: black}
+
+.hello{
+  text-align: center;
+}
+.hello img {
+  display: block; 
+  margin-top: -20px;
+  width: 480px;
+}
+
+.center{
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  height: 90%;
+}
+
+/* main */
+.main{
+  background-color: white;
+  width: 480px;
+  overflow-y: scroll;
+  border-radius: 60px 0 0 60px;
+  border: 5px solid rgb(73, 149, 179);
+}
+.main::-webkit-scrollbar {
+  width: 10px;
+  background: transparent;
+}
+#main_in {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+#head {
+  margin-top: 5px;
+  margin-left: -120px;
+  font-size: 20px;
+}
+#head h1 a:hover{
+  text-decoration: none; 
+  box-shadow: 0 -6px
+  rgba(75, 112, 253, 0.3) inset; 
+  transition: all 0.5s ease-in-out;
+}
+#date {
+  margin-top: -20px;
+  color: rgb(102, 197, 235);
+}
+.create{
+  position: absolute;
+  margin-left: 330px;
+  margin-top: 40px;
+  font-size: 30px;
+  width: 35px;
+  height: 35px;
+  background-color: rgb(118, 204, 238);
+  border-radius: 60px 35px 50px 35px;
+}
+.create:hover{
+  transition: all 0.5s ease-in-out;
+  background-color: #ffca63;
+}
+.create a p{
+  color: white;
+  margin:0px;
+  margin-left: 11px;
+}
+.create a p:hover {
+  box-shadow: none;
+}
+
+.cbtn{
+  vertical-align: middle; /* Input 과 타 요소들의 텍스트 높이를 동일하게 세로 정렬한다 */
+  display: inline-block; /* a나 span 태그의 경우 inline-block 요소처리 */
+  line-height: 1;
+  cursor: pointer; /* input type에 따라 커서의 모양이 다르다. */
+  /* 패딩은 Input과 다른 태그들이 달라야 한다 */
+  padding: 2px 8px;
+  /* 디자인 dy소들 */
+  font-size: 10px;
+  font-family: 'Nanum Pen Script', cursive;
+  font-size: 20px;
+  /* 요소마다 border 의 색상을 다르게 주기 위해서 속성들을 따로 기입한다 */
+  border-style: solid;
+  border-width: 1px;
+  border-color: skyblue;
+  border-radius: 15px 15px 15px 15px;
+  background: skyblue;
+  color: white;
+}
+
+.info{
+  margin-top: 10%;
+}
+.info input[type="text"],textarea{
+  width: 250px; /* 원하는 너비 설정 */ 
+  height: auto; /* 높이값 초기화 */ 
+  line-height : normal; /* line-height 초기화 */ 
+  padding: .3em .3em; /* 원하는 여백 설정, 상하단 여백으로 높이를 조절 */ 
+  font-family: inherit; /* 폰트 상속 */ 
+  font-size: 20px;
+  border: 2px solid skyblue; 
+  border-radius: 5px 5px 5px 5px; /* iSO 둥근모서리 제거 */ 
+  outline-style: none; /* 포커스시 발생하는 효과 제거를 원한다면 */ 
+  -webkit-appearance: none; /* 브라우저별 기본 스타일링 제거 */ 
+  -moz-appearance: none; 
+  appearance: none;
+}
+.info textarea{
+  height: 80px;
+}
+
+.list{
+  padding: 10px 130px;
+  background-color: white;
+  border: 3px solid skyblue;
+  margin: 20px 0;
+  margin-top: 10px;
+  border-radius: 20px 20px 20px 20px;
+  word-break:break-all;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  width: 90px;
+  font-size: 20px;
+}
+
+.list p{
+  margin: 0;
+  margin-left: -85px;
+  word-break: break-all;
+  width: 250px;
+}
+.list .title {
+  font-weight: 600;
+}
+.list .content {
+  color: rgb(92, 92, 92);
+}
+
+.list:hover{
+  border-color: #ffca63;
+  transition: all 0.7s ease-in-out;
+}
+.list .title a:hover{
+  box-shadow: 0 -6px
+  #ffca63 inset;
+  transition: all 0.7s ease-in-out;
+}
+
+.change{
+  width: 50px;
+}
+
+.page{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 300px;
+}
+.page h2{
+  margin: 0px;
+  margin-top: 80px;
+  word-break:break-all;
+}
+.page p{
+  font-size: 18px;
+  word-break:break-all;
+}
+.page .up_del{
+  display: flex;
+  justify-content: center;
+}
+.page a,.del{
+  vertical-align: middle; /* Input 과 타 요소들의 텍스트 높이를 동일하게 세로 정렬한다 */
+  display: inline-block; /* a나 span 태그의 경우 inline-block 요소처리 */
+  line-height: 1;
+  height: 20px;
+  cursor: pointer; /* input type에 따라 커서의 모양이 다르다. */
+  /* 패딩은 Input과 다른 태그들이 달라야 한다 */
+  padding: 2px 8px;
+  /* 디자인 dy소들 */
+  font-size: 18px;
+  font-family: 'Nanum Pen Script', cursive;
+  /* 요소마다 border 의 색상을 다르게 주기 위해서 속성들을 따로 기입한다 */
+  border-style: solid;
+  border-width: 1px;
+  border-color: skyblue;
+  border-radius: 15px 15px 15px 15px;
+  background: skyblue;
+  color: white;
+}
+.del{
+  border-color: rgb(253, 120, 120);
+  background-color:rgb(253, 120, 120);
+  height: 26px;
+  margin-left: 5px;
+}
+.del:hover{
+  transition: all 0.7s ease-in-out;
+}
+
+/* right bar */
+.right_bar{
+  display: flex;
+  background-color:rgb(73, 149, 179);
+  font-weight: bold;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 0 60px 60px 0;
+  width: 240px;
+  font-size: 20px;
+}
+
+.right_bar .before{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 45px;
+}
+.right_bar .before a{
+  margin-left:3px;
+  font-size: 25px;
+  font-weight: 100;
+  color: rgb(255, 255, 255);
+}
+/* .right_bar .before :hover{
+  border-radius: 200px 0 200px 0;
+  transition: all 0.7s ease-in-out;
+  background:skyblue;
+  color: black;
+} */
+
+.login{
+  padding: 3px;
+  margin-right: 5px;
+  width: 60px;
+  background-color: #0f2530;
+  border-radius: 20px 20px 20px 20px;
+}
+.register{
+  padding: 3px;
+  width: 85px;
+  background-color: #0f2530;
+  border-radius: 20px 20px 20px 20px;
+}
+
+.right_bar .after p{
+  font-size: 25px;
+  margin: 0px;
+  margin-top: 20px;
+  margin-right: 55px;
+}
+.right_bar .after a{
+  color: rgb(228, 228, 228);
+}
+
+.feedback{
+  color: red;
+  margin-left: 5px;
+  margin-top: -5px;
+  margin-bottom: 10px;;
+}
+
+/* login */
+.log, .reg{
+  top: 20%;
+  left: 40%;
+  padding: 20px;
+  padding-bottom: 2px;
+  background-color: skyblue;
+  position: absolute;
+  border-radius: 20px 20px 20px 20px;
+}
+.log a:hover {
+  box-shadow: none;
+}
+.log .log_title {
+  margin: 0px;
+}
+
+.log input[type="password"], input[type="text"]{
+  width: 180px; /* 원하는 너비 설정 */ 
+  height: auto; /* 높이값 초기화 */ 
+  line-height : normal; /* line-height 초기화 */ 
+  padding: .3em .3em; /* 원하는 여백 설정, 상하단 여백으로 높이를 조절 */ 
+  font-family: inherit; /* 폰트 상속 */ 
+  font-size: 20px;
+  border: 2px solid skyblue; 
+  border-radius: 5px 5px 5px 5px; /* iSO 둥근모서리 제거 */ 
+  outline-style: none; /* 포커스시 발생하는 효과 제거를 원한다면 */ 
+  -webkit-appearance: none; /* 브라우저별 기본 스타일링 제거 */ 
+  -moz-appearance: none; 
+  appearance: none;
+}
+.reg input[type="password"], input[type="text"]{
+  width: 180px; /* 원하는 너비 설정 */ 
+  height: auto; /* 높이값 초기화 */ 
+  line-height : normal; /* line-height 초기화 */ 
+  padding: .3em .3em; /* 원하는 여백 설정, 상하단 여백으로 높이를 조절 */ 
+  font-family: inherit; /* 폰트 상속 */ 
+  font-size: 20px;
+  border: 2px solid skyblue; 
+  border-radius: 5px 5px 5px 5px; /* iSO 둥근모서리 제거 */ 
+  outline-style: none; /* 포커스시 발생하는 효과 제거를 원한다면 */ 
+  -webkit-appearance: none; /* 브라우저별 기본 스타일링 제거 */ 
+  -moz-appearance: none; 
+  appearance: none;
+}
+
+.overlay{
+  background-color: rgba(0, 0, 0, 0.8);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.cancel{
+  position: absolute;
+  margin-left: 160px;
+  margin-top: -30px;
+}
+
+.log_btn, .reg_btn{
+  vertical-align: middle; /* Input 과 타 요소들의 텍스트 높이를 동일하게 세로 정렬한다 */
+  display: inline-block; /* a나 span 태그의 경우 inline-block 요소처리 */
+  line-height: 1;
+  cursor: pointer; /* input type에 따라 커서의 모양이 다르다. */
+  
+  /* 패딩은 Input과 다른 태그들이 달라야 한다 */
+  padding: 0px 5px;
+  /* 디자인 dy소들 */
+  font-size: 10px;
+  font-family: 'Nanum Pen Script', cursive;
+  font-size: 20px;
+  font-weight: bold;
+  /* 요소마다 border 의 색상을 다르게 주기 위해서 속성들을 따로 기입한다 */
+  border-style: solid;
+  border-width: 1px;
+  border-color: skyblue;
+  background: skyblue;
+  color: black;
+}
+
+.bar_log p {
+  margin:0px;
+}
+
+.success{
+  display: flex;
+  flex-direction: row;
+  margin-top: 5px;
+  margin-right: 10px;
+}
+.success .face{
+  width: 55px;
+  height: 55px;
+  padding: 0px;
+  margin-top: 20px;
+  margin-right: 20px;
+  background-color: bisque;
+  border-radius: 50px 50px 50px 50px;
+}
+.face img{
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 50px 50px 50px 50px;
+}
+
+/* stopWatch */
+.stdiv{
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgb(151, 210, 231);
+  padding: 28 0;
+  width: 170px;
+  border-radius: 30px 30px 30px 30px;
+  box-shadow: 0 -15px 15px rgba(255, 255, 255, 0.05),
+    inset 0 -15px 15px rgba(255, 255, 255, 0.05),
+    0 -5px 5px rgba(0, 0, 0, 0.2), inset 0 -5px 5px rgba(0, 0, 0, 0.2);
+}
+.stopN{
+  display: flex;
+}
+.stw{
+  margin: 0px;
+  margin-bottom: 8px;
+  font-size: 22px;
+}
+
+#stopwatch{
+  font-size: 40px;
+}
+#swbtn{
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+#startBtn:hover, #stopBtn:hover, #resetBtn:hover {
+  color: #ffca63;
+}
+
+/* clock */
+.clock {
+  width: 180px;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url(/images/clock.png);
+  background-color: #0f2530;
+  background-size: cover;
+  border: 4px solid #091921;
+  border-radius: 50%;
+  margin-top: 55px;
+}
+
+.clock:before {
+  content: " ";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: #fff;
+  border-radius: 50%;
+  z-index: 10000;
+}
+
+.clock .hour,
+.clock .min,
+.clock .sec {
+  position: absolute;
+}
+.clock .hour,
+.hr {
+  width: 110px;
+  height: 110px;
+}
+.clock .min,
+.mn {
+  width: 130px;
+  height: 130px;
+}
+.clock .sec,
+.sc {
+  width: 150px;
+  height: 150px;
+}
+
+.hr,
+.mn,
+.sc {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  border-radius: 50%;
+}
+  /* 뒷초침 */
+.hr:before {
+  content: "";
+  position: absolute;
+  width: 7px;
+  height: 60px;
+  background: #ff105e;
+  z-index: 10;
+  border-radius: 6px 6px 0 0;
+}
+
+.mn:before {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 70px;
+  background: #fff;
+  z-index: 11;
+  border-radius: 6px 6px 0 0;
+}
+.sc:before {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 100px;
+  background: #fff;
+  z-index: 12;
+  border-radius: 6px 6px 0 0;
+}
+
+/* color toggle */
+.toggle{
+  display: flex;
+  flex-direction: row;
+}
+
+#blue, #yellow, #green, #red {
+  padding: 20px;
+  border-radius: 50%;
+  margin: 5px;
+  margin-top: 70px;
+}
+
+#blue{
+  background-color: rgb(102, 197, 235);
+}
+#yellow{
+  background-color: rgb(255, 218, 115);
+}
+#green{
+  background-color: rgb(29, 165, 29);
+  /* background-color: rgb(1, 116, 1); */
+}
+#red{
+  background-color: rgb(253, 120, 120);
+  /* background-color: #ff105e; */
+}
